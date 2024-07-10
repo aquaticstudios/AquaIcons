@@ -13,13 +13,13 @@
 # * https://github.com/Sxntido - https://github.com/aquaticstudios
 
 list:
-  no-icons:
-    - "<center>&cNot have icons"
-    - "<empty>"
   title-chat:
     - "<empty>"
     - "<center>&b&lAquaIcons &7(v1.0.0)"
     - "<center>&fPlugin created by &3@Sxntido"
+    - "<empty>"
+  no-icons:
+    - "<center>&cNo icons found in &7icons.yml"
     - "<empty>"
   format-list:
     - " &7● &fTrigger: &a%aquaicons_trigger% &7| &fIcon: %aquaicons_icon% &7(%aquaicons_permission%)"
