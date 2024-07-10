@@ -32,7 +32,7 @@ public class Executor implements CommandExecutor {
 
         if (args[0].equalsIgnoreCase("help")) {
             if (!sender.hasPermission("aquaicons.help")) {
-                sender.sendMessage("You do not have permission to use this command.");
+                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(AquaIcons.SetConfig().getString("messages.no-permission"))));
                 return true;
             }
 
@@ -45,7 +45,7 @@ public class Executor implements CommandExecutor {
 
         if (args[0].equalsIgnoreCase("create")) {
             if (!sender.hasPermission("aquaicons.create")) {
-                sender.sendMessage("You do not have permission to use this command.");
+                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(AquaIcons.SetConfig().getString("messages.no-permission"))));
                 return true;
             }
 
@@ -81,13 +81,13 @@ public class Executor implements CommandExecutor {
 
             AquaIcons.GetIcons().Save();
 
-            sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(AquaIcons.SetConfig().getString("messages.new-icon").replace("%aquaicons_name%", name))));
+            sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(AquaIcons.SetConfig().getString("messages.new-icon").replace("%aquaicons_name%", name).replace("%aquaicons_trigger%", trigger).replace("%aquaicons.icon%", icon))));
             return true;
         }
 
         if (args[0].equalsIgnoreCase("list")) {
             if (!sender.hasPermission("aquaicons.list")) {
-                sender.sendMessage("You do not have permission to use this command.");
+                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(AquaIcons.SetConfig().getString("messages.list-permission"))));
                 return true;
             }
 
@@ -114,6 +114,7 @@ public class Executor implements CommandExecutor {
 
             if (config.contains("icons")) {
                 for (String key : config.getConfigurationSection("icons").getKeys(false)) {
+                    String name = key;
                     String trigger = config.getString("icons." + key + ".trigger", "N/A");
                     String icon = config.getString("icons." + key + ".icon", "N/A");
                     String permission = config.getString("icons." + key + ".permission", "N/A");
@@ -125,12 +126,14 @@ public class Executor implements CommandExecutor {
                             } else {
                                 if (line.startsWith("<center>")) {
                                     String centeredMessage = line.replace("<center>", "")
+                                            .replace("%aquaicons_name%", name)
                                             .replace("%aquaicons_trigger%", trigger)
                                             .replace("%aquaicons_icon%", icon)
                                             .replace("%aquaicons_permission%", permission);
                                     sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(Utils.CenterMessage(centeredMessage))));
                                 } else {
                                     String message = line.replace("%aquaicons_trigger%", trigger)
+                                            .replace("%aquaicons_name%", name)
                                             .replace("%aquaicons_icon%", icon)
                                             .replace("%aquaicons_permission%", permission);
                                     sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(message)));
@@ -140,14 +143,28 @@ public class Executor implements CommandExecutor {
                     }
                 }
             } else {
-                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(AquaIcons.SetConfig().getString("messages.no-icons"))));
+                List<String> noIconsMessages = messages.getStringList("list.no-icons");
+                for (String noIconsLine : noIconsMessages) {
+                    if (!noIconsLine.trim().isEmpty()) {
+                        if (noIconsLine.equals("<empty>")) {
+                            sender.sendMessage(Utils.TranslateColor("&r"));
+                        } else {
+                            if (noIconsLine.startsWith("<center>")) {
+                                String centeredMessage = noIconsLine.replace("<center>", "");
+                                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(Utils.CenterMessage(centeredMessage))));
+                            } else {
+                                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(noIconsLine)));
+                            }
+                        }
+                    }
+                }
             }
             return true;
         }
 
         if (args[0].equalsIgnoreCase("reload")) {
             if (!sender.hasPermission("aquaicons.reload")) {
-                sender.sendMessage("You do not have permission to use this command.");
+                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(AquaIcons.SetConfig().getString("messages.no-permission"))));
                 return true;
             }
 

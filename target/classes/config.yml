@@ -4,24 +4,33 @@
 # List of variables:
 #  <empty> - An empty space is created
 #  <center> - Messages will be in the center of the chat
+# * %aquaicons_name% -
+# * %aquaicons_trigger% -
+# * %aquaicons_icon% -
+# * %aquaicons_permission% -
 
 # * Support Colors & HEX: https://www.birdflop.com/resources/rgb/
 # * https://github.com/Sxntido - https://github.com/aquaticstudios
 
 list:
+  no-icons:
+    - "<center>&cNot have icons"
+    - "<empty>"
   title-chat:
     - "<empty>"
-    - "&b&lAquaIcons &7(v1.0.0)"
-    - "&fPlugin created by &3@Sxntido"
+    - "<center>&b&lAquaIcons &7(v1.0.0)"
+    - "<center>&fPlugin created by &3@Sxntido"
     - "<empty>"
   format-list:
-    - "&fTrigger: &a%aquaicons_trigger% &7| &fIcon: %aquaicons_icon% &7(%aquaicons_permission%)"
+    - " &7● &fTrigger: &a%aquaicons_trigger% &7| &fIcon: %aquaicons_icon% &7(%aquaicons_permission%)"
+    - "<empty>"
 
 messages:
   reload: "&aReloaded all files the plugin"
   new-icon: "&fNew icon created &7(%aquaicons_name%)"
-  no-icons: "&cNot have icons"
   already-name: "&cAlready exist this name"
   already-trigger: "&cAlready exist this trigger"
   unknown: "&cunknown"
   how-to-create: "&cUsage: /aquaicons create <name> <trigger> <icon> <permission>"
+  no-permission: "&cYou don't have permission execute this command"
+  list-permission: "&cYou need rank &b[EXAMPLE] &cexample &7(aquaicons.list)"
