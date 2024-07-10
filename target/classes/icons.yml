@@ -1,0 +1,9 @@
+icons:
+  heart:
+    trigger: '<3'
+    icon: '&c❤'
+    permission: icon.heart
+  example:
+    trigger: ':rgb:'
+    icon: '&#084CFB&lA&#1458FB&lq&#2064FB&lu&#2B70FB&la&#377CFC&lt&#4388FC&li&#4F94FC&lc &#66ABFC&lS&#72B7FC&lt&#7EC3FC&lu&#8ACFFD&ld&#95DBFD&li&#A1E7FD&lo&#ADF3FD&ls'
+    permission: rgb.icon

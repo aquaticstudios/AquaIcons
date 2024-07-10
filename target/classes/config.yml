@@ -1,0 +1,27 @@
+#              AquaIcons developed by @Sxntido
+#             This plugin was previously Emotes
+
+# List of variables:
+#  <empty> - An empty space is created
+#  <center> - Messages will be in the center of the chat
+
+# * Support Colors & HEX: https://www.birdflop.com/resources/rgb/
+# * https://github.com/Sxntido - https://github.com/aquaticstudios
+
+list:
+  title-chat:
+    - "<empty>"
+    - "&b&lAquaIcons &7(v1.0.0)"
+    - "&fPlugin created by &3@Sxntido"
+    - "<empty>"
+  format-list:
+    - "&fTrigger: &a%aquaicons_trigger% &7| &fIcon: %aquaicons_icon% &7(%aquaicons_permission%)"
+
+messages:
+  reload: "&aReloaded all files the plugin"
+  new-icon: "&fNew icon created &7(%aquaicons_name%)"
+  no-icons: "&cNot have icons"
+  already-name: "&cAlready exist this name"
+  already-trigger: "&cAlready exist this trigger"
+  unknown: "&cunknown"
+  how-to-create: "&cUsage: /aquaicons create <name> <trigger> <icon> <permission>"
