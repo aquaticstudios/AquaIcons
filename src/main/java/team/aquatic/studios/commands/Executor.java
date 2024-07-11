@@ -26,7 +26,10 @@ public class Executor implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length == 0) {
-            sender.sendMessage("AquaIcons Commands:");
+            sender.sendMessage(Utils.TranslateColor("&r"));
+            sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&b&lAquaIcons &f(v1.0.0 - @Sxntido)")));
+            sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&fAll rights reserved by &3Aquatic Studios")));
+            sender.sendMessage(Utils.TranslateColor("&r"));
             return true;
         }
 
@@ -36,10 +39,17 @@ public class Executor implements CommandExecutor {
                 return true;
             }
 
-            sender.sendMessage("AquaIcons Commands:");
-            sender.sendMessage("/aquaicons create <name> <trigger> <icon> <permission> - Create a new icon");
-            sender.sendMessage("/aquaicons list - List all icons");
-            sender.sendMessage("/aquaicons reload - Reload the icons configuration");
+            sender.sendMessage(Utils.TranslateColor("&r"));
+            sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&b&lAquaIcons &7(v1.0.0)")));
+            sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&fPlugin developed by &3@Sxntido")));
+            sender.sendMessage(Utils.TranslateColor("&r"));
+            sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&a/aquaicons reload &7- &fReload plugin files")));
+            sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&a/aquaicons help &7- &fView the list of commands")));
+            sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&a/aquaicons list &7- &fCommand to view list of icons")));
+            sender.sendMessage(Utils.TranslateColor("&r"));
+            sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&fCommand to create icons:")));
+            sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&a/aquaicons create <name> <trigger> <icon> <permission>")));
+            sender.sendMessage(Utils.TranslateColor("&r"));
             return true;
         }
 
