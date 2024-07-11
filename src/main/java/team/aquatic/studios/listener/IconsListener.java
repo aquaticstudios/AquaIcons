@@ -8,6 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import team.aquatic.studios.AquaIcons;
 import team.aquatic.studios.manager.IconsManager;
+import team.aquatic.studios.tools.Utils;
 
 /**
  * Code update
@@ -30,7 +31,7 @@ public class IconsListener implements Listener {
                 if (message.contains(icon.getTrigger())) {
                     if (player.hasPermission(icon.getPermission())) {
                         message = message.replace(icon.getTrigger(), icon.getIcon());
-                        event.setMessage(ChatColor.translateAlternateColorCodes('&', message));
+                        event.setMessage(Utils.TranslateHexColor(Utils.TranslateHexColor(message)));
                     } else {
                         if (message.contains(icon.getTrigger())) {
                             event.setMessage(icon.getTrigger());
