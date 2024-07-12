@@ -34,8 +34,11 @@ public class Executor implements CommandExecutor {
         }
 
         if (args[0].equalsIgnoreCase("help")) {
-            if (!sender.hasPermission("aquaicons.help")) {
-                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(AquaIcons.SetConfig().getString("messages.no-permission"))));
+            if (!sender.hasPermission("aquaicons.help") || !sender.hasPermission("aquaicons.admin")) {
+                sender.sendMessage(Utils.TranslateColor("&r"));
+                sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&b&lAquaIcons &7(v1.0.0)")));
+                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(Utils.CenterMessage(AquaIcons.SetConfig().getString("messages.no-permission")))));
+                sender.sendMessage(Utils.TranslateColor("&r"));
                 return true;
             }
 
@@ -54,13 +57,19 @@ public class Executor implements CommandExecutor {
         }
 
         if (args[0].equalsIgnoreCase("create")) {
-            if (!sender.hasPermission("aquaicons.create")) {
-                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(AquaIcons.SetConfig().getString("messages.no-permission"))));
+            if (!sender.hasPermission("aquaicons.create") || !sender.hasPermission("aquaicons.admin")) {
+                sender.sendMessage(Utils.TranslateColor("&r"));
+                sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&b&lAquaIcons &7(v1.0.0)")));
+                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(Utils.CenterMessage(AquaIcons.SetConfig().getString("messages.no-permission")))));
+                sender.sendMessage(Utils.TranslateColor("&r"));
                 return true;
             }
 
             if (args.length != 5) {
-                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(AquaIcons.SetConfig().getString("messages.how-to-create"))));
+                sender.sendMessage(Utils.TranslateColor("&r"));
+                sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&b&lAquaIcons &7(v1.0.0)")));
+                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(Utils.CenterMessage(AquaIcons.SetConfig().getString("messages.how-to-create")))));
+                sender.sendMessage(Utils.TranslateColor("&r"));
                 return true;
             }
 
@@ -72,14 +81,20 @@ public class Executor implements CommandExecutor {
             FileConfiguration config = AquaIcons.GetIcons();
 
             if (config.contains("icons." + name)) {
-                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(AquaIcons.SetConfig().getString("messages.already-name"))));
+                sender.sendMessage(Utils.TranslateColor("&r"));
+                sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&b&lAquaIcons &7(v1.0.0)")));
+                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(Utils.CenterMessage(AquaIcons.SetConfig().getString("messages.already-name")))));
+                sender.sendMessage(Utils.TranslateColor("&r"));
                 return true;
             }
 
             for (String key : config.getConfigurationSection("icons").getKeys(false)) {
                 String existingTrigger = config.getString("icons." + key + ".trigger");
                 if (existingTrigger.equalsIgnoreCase(trigger)) {
-                    sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(AquaIcons.SetConfig().getString("messages.already-trigger"))));
+                    sender.sendMessage(Utils.TranslateColor("&r"));
+                    sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&b&lAquaIcons &7(v1.0.0)")));
+                    sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(Utils.CenterMessage(AquaIcons.SetConfig().getString("messages.already-trigger")))));
+                    sender.sendMessage(Utils.TranslateColor("&r"));
                     return true;
                 }
             }
@@ -91,13 +106,19 @@ public class Executor implements CommandExecutor {
 
             AquaIcons.GetIcons().Save();
 
-            sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(AquaIcons.SetConfig().getString("messages.new-icon").replace("%aquaicons_name%", name).replace("%aquaicons_trigger%", trigger).replace("%aquaicons.icon%", icon))));
+            sender.sendMessage(Utils.TranslateColor("&r"));
+            sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&b&lAquaIcons &7(v1.0.0)")));
+            sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(Utils.CenterMessage(AquaIcons.SetConfig().getString("messages.new-icon").replace("%aquaicons_name%", name).replace("%aquaicons_trigger%", trigger).replace("%aquaicons.icon%", icon)))));
+            sender.sendMessage(Utils.TranslateColor("&r"));
             return true;
         }
 
         if (args[0].equalsIgnoreCase("list")) {
-            if (!sender.hasPermission("aquaicons.list")) {
-                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(AquaIcons.SetConfig().getString("messages.list-permission"))));
+            if (!sender.hasPermission("aquaicons.list") || !sender.hasPermission("aquaicons.admin")) {
+                sender.sendMessage(Utils.TranslateColor("&r"));
+                sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&b&lAquaIcons &7(v1.0.0)")));
+                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(Utils.CenterMessage(AquaIcons.SetConfig().getString("messages.list-permission")))));
+                sender.sendMessage(Utils.TranslateColor("&r"));
                 return true;
             }
 
@@ -173,18 +194,28 @@ public class Executor implements CommandExecutor {
         }
 
         if (args[0].equalsIgnoreCase("reload")) {
-            if (!sender.hasPermission("aquaicons.reload")) {
-                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(AquaIcons.SetConfig().getString("messages.no-permission"))));
+            if (!sender.hasPermission("aquaicons.reload") || !sender.hasPermission("aquaicons.admin")) {
+                sender.sendMessage(Utils.TranslateColor("&r"));
+                sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&b&lAquaIcons &7(v1.0.0)")));
+                sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(Utils.CenterMessage(AquaIcons.SetConfig().getString("messages.no-permission")))));
+                sender.sendMessage(Utils.TranslateColor("&r"));
                 return true;
             }
 
             AquaIcons.GetIcons().Reload();
             AquaIcons.SetConfig().Reload();
-            sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(AquaIcons.SetConfig().getString("messages.reload"))));
+
+            sender.sendMessage(Utils.TranslateColor("&r"));
+            sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&b&lAquaIcons &7(v1.0.0)")));
+            sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(Utils.CenterMessage(AquaIcons.SetConfig().getString("messages.reload")))));
+            sender.sendMessage(Utils.TranslateColor("&r"));
             return true;
         }
 
-        sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(AquaIcons.SetConfig().getString("messages.unknown"))));
+        sender.sendMessage(Utils.TranslateColor("&r"));
+        sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&b&lAquaIcons &7(v1.0.0)")));
+        sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(Utils.CenterMessage(AquaIcons.SetConfig().getString("messages.unknown")))));
+        sender.sendMessage(Utils.TranslateColor("&r"));
         return true;
     }
 }
