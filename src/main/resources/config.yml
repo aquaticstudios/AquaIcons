@@ -4,10 +4,10 @@
 # List of variables:
 #  <empty> - An empty space is created
 #  <center> - Messages will be in the center of the chat
-# * %aquaicons_name% -
-# * %aquaicons_trigger% -
-# * %aquaicons_icon% -
-# * %aquaicons_permission% -
+# * %aquaicons_name% - Preview icon name
+# * %aquaicons_trigger% - Preview the icon trigger
+# * %aquaicons_icon% - Preview the icon
+# * %aquaicons_permission% - Preview icon permission
 
 # * Support Colors & HEX: https://www.birdflop.com/resources/rgb/
 # * https://github.com/Sxntido - https://github.com/aquaticstudios
@@ -26,11 +26,11 @@ list:
     - "<empty>"
 
 messages:
-  reload: "&aReloaded all files the plugin"
-  new-icon: "&fNew icon created &7(%aquaicons_name%)"
-  already-name: "&cAlready exist this name"
-  already-trigger: "&cAlready exist this trigger"
-  unknown: "&cunknown"
-  how-to-create: "&cUsage: /aquaicons create <name> <trigger> <icon> <permission>"
+  reload: "&aThe files have been uploaded successfully"
+  new-icon: "&aA new icon was created &7(%aquaicons_name% - %aquaicons_trigger%)"
+  already-name: "&cThis name already exists in &7icons.yml"
+  already-trigger: "&cThis trigger already exists in &7icons.yml"
+  unknown: "&cThe command you execute does not exist"
+  how-to-create: "&c/aquaicons create <name> <trigger> <icon> <permission>"
   no-permission: "&cYou don't have permission execute this command"
-  list-permission: "&cYou need rank &b[EXAMPLE] &cexample &7(aquaicons.list)"
+  list-permission: "&cYou need to have permission &3[aquaicons.list]"
