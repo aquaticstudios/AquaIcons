@@ -6,6 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import team.aquatic.studios.bstats.Metrics;
 
 import team.aquatic.studios.commands.Executor;
+import team.aquatic.studios.commands.tab.ExcTab;
 import team.aquatic.studios.folder.Files;
 import team.aquatic.studios.listener.IconsListener;
 
@@ -36,6 +37,7 @@ public final class AquaIcons extends JavaPlugin {
 
         icons = new Files("icons");
         config = new Files("config");
+
         RegisterCommands();
         RegisterListeners();
 
@@ -46,6 +48,7 @@ public final class AquaIcons extends JavaPlugin {
     }
 
     private void RegisterCommands() {
+        getCommand("aquaicons").setTabCompleter(new ExcTab());
         getCommand("aquaicons").setExecutor(new Executor(this));
     }
 
