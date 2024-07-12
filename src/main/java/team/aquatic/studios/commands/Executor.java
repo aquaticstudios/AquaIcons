@@ -34,7 +34,7 @@ public class Executor implements CommandExecutor {
         }
 
         if (args[0].equalsIgnoreCase("help")) {
-            if (!sender.hasPermission("aquaicons.help") || !sender.hasPermission("aquaicons.admin")) {
+            if (!sender.hasPermission("aquaicons.admin")) {
                 sender.sendMessage(Utils.TranslateColor("&r"));
                 sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&b&lAquaIcons &7(v1.0.0)")));
                 sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(Utils.CenterMessage(AquaIcons.SetConfig().getString("messages.no-permission")))));
@@ -57,7 +57,7 @@ public class Executor implements CommandExecutor {
         }
 
         if (args[0].equalsIgnoreCase("create")) {
-            if (!sender.hasPermission("aquaicons.create") || !sender.hasPermission("aquaicons.admin")) {
+            if (!sender.hasPermission("aquaicons.admin")) {
                 sender.sendMessage(Utils.TranslateColor("&r"));
                 sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&b&lAquaIcons &7(v1.0.0)")));
                 sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(Utils.CenterMessage(AquaIcons.SetConfig().getString("messages.no-permission")))));
@@ -114,7 +114,7 @@ public class Executor implements CommandExecutor {
         }
 
         if (args[0].equalsIgnoreCase("list")) {
-            if (!sender.hasPermission("aquaicons.list") || !sender.hasPermission("aquaicons.admin")) {
+            if (!sender.hasPermission("aquaicons.list")) {
                 sender.sendMessage(Utils.TranslateColor("&r"));
                 sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&b&lAquaIcons &7(v1.0.0)")));
                 sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(Utils.CenterMessage(AquaIcons.SetConfig().getString("messages.list-permission")))));
@@ -194,7 +194,7 @@ public class Executor implements CommandExecutor {
         }
 
         if (args[0].equalsIgnoreCase("reload")) {
-            if (!sender.hasPermission("aquaicons.reload") || !sender.hasPermission("aquaicons.admin")) {
+            if (!sender.hasPermission("aquaicons.admin")) {
                 sender.sendMessage(Utils.TranslateColor("&r"));
                 sender.sendMessage(Utils.TranslateColor(Utils.CenterMessage("&b&lAquaIcons &7(v1.0.0)")));
                 sender.sendMessage(Utils.TranslateHexColor(Utils.TranslateColor(Utils.CenterMessage(AquaIcons.SetConfig().getString("messages.no-permission")))));
