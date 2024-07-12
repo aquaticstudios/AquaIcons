@@ -27,10 +27,10 @@ list:
 
 messages:
   reload: "&aThe files have been uploaded successfully"
-  new-icon: "&aA new icon was created &7(%aquaicons_name% - %aquaicons_trigger%)"
   already-name: "&cThis name already exists in &7icons.yml"
   already-trigger: "&cThis trigger already exists in &7icons.yml"
   unknown: "&cThe command you execute does not exist"
   how-to-create: "&c/aquaicons create <name> <trigger> <icon> <permission>"
   no-permission: "&cYou don't have permission execute this command"
   list-permission: "&cYou need to have permission &3[aquaicons.list]"
+  new-icon: "&aA new icon was created &7(%aquaicons_name% - %aquaicons_trigger%)"
