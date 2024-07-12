@@ -14,7 +14,7 @@ public class ExcTab implements TabCompleter {
         List<String> completions = new ArrayList<>();
 
         if (args.length == 1) {
-            if (sender.hasPermission("aquaicons.list")) {
+            if (sender.hasPermission("aquaicons.list") || sender.hasPermission("aquaicons.admin")) {
                 completions.add("list");
             }
 
