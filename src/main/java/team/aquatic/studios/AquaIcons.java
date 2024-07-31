@@ -3,9 +3,7 @@ package team.aquatic.studios;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import team.aquatic.studios.bstats.Metrics;
-
 import team.aquatic.studios.commands.Executor;
 import team.aquatic.studios.commands.tab.ExcTab;
 import team.aquatic.studios.folder.Files;
@@ -40,6 +38,7 @@ public final class AquaIcons extends JavaPlugin {
     public void onEnable() {
         instance = this;
         int pluginId = 22572;
+        Metrics metrics = new Metrics(this, pluginId);
 
         icons = new Files("icons");
         config = new Files("config");
@@ -48,23 +47,21 @@ public final class AquaIcons extends JavaPlugin {
         RegisterListeners();
 
         Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&r"));
-        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&3     _   ___ "));
-        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&3    /_\\ |_ _|  &bAquaIcons &f(v" + pluginVersion + "&f) - &aEnabled"));
-        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&3   / _ \\ | |   &fRunning on " + bukkitVersion));
-        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&3  /_/ \\_\\___|"));
-        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("            "));
-
-        Metrics metrics = new Metrics(this, pluginId);
+        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&3    _   ___ "));
+        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&3   /_\\ |_ _|  &bAquaIcons &f(v" + pluginVersion + "&f) - &aEnabled"));
+        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&3  / _ \\ | |   &fRunning on " + bukkitVersion));
+        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&3 /_/ \\_\\___|"));
+        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&r"));
     }
 
     @Override
     public void onDisable() {
         Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&r"));
-        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&c     _   ___ "));
-        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&c    /_\\ |_ _|  &bAquaIcons &f(v" + pluginVersion + "&f) - &cDisabled"));
-        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&c   / _ \\ | |   &fRunning on " + bukkitVersion));
-        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&c  /_/ \\_\\___|"));
-        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("            "));
+        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&c    _   ___ "));
+        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&c   /_\\ |_ _|  &bAquaIcons &f(v" + pluginVersion + "&f) - &cDisabled"));
+        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&c  / _ \\ | |   &fRunning on " + bukkitVersion));
+        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&c /_/ \\_\\___|"));
+        Bukkit.getConsoleSender().sendMessage(Utils.TranslateColor("&r"));
     }
 
     private void RegisterCommands() {

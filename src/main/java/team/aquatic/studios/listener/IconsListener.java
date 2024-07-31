@@ -1,6 +1,5 @@
 package team.aquatic.studios.listener;
 
-import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -31,7 +30,7 @@ public class IconsListener implements Listener {
                 if (message.contains(icon.getTrigger())) {
                     if (player.hasPermission(icon.getPermission())) {
                         message = message.replace(icon.getTrigger(), icon.getIcon());
-                        event.setMessage(Utils.TranslateHexColor(Utils.TranslateHexColor(message)));
+                        event.setMessage(Utils.TranslateColor(message));
                     } else {
                         if (message.contains(icon.getTrigger())) {
                             event.setMessage(icon.getTrigger());
